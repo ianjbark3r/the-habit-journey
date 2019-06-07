@@ -1,3 +1,6 @@
+# the-habit-journey
+A useful application for choosing and keeping good habits!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
