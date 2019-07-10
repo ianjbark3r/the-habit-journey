@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Domine:700|Roboto&display=swap');
+
+// Global variables
+$theme-colors: (
+  "primary":#FFCC00,
+  "secondary":#FFFFFF
+);
+
+// Typography
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Domine', serif;
+}
+
+.dropdown-toggle::after {
+  display:none!important;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
