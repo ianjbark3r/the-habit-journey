@@ -43,7 +43,8 @@ class CreateStack extends Component {
                   const uid = this.props.uid;
 
                   // API call
-                  axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/${uid}`, {
+                  axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/`, {
+                    uid: uid,
                     data: values
                   })
                   .then(res => {
@@ -52,7 +53,7 @@ class CreateStack extends Component {
 
                       // Update state with returned data
                       store.dispatch(createStackConfirm({
-                        id: res.state.id,
+                        id: res.data.id,
                         name: values.name,
                         type: 'stack',
                         first_habit: values.first_habit,

@@ -52,9 +52,57 @@ class App extends Component {
         })
         .then(res => {
           if (res.status === 200) {
-            // Update state with dashboard data
+            console.log(res);
+            console.log(res.data);
+            console.log(res.user);
+
+            // Check for init doc. If not present, try to create.
+            if (res.data.filter(e => e.init === true).length === 0) {
+              axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
+                uid: uid
+              })
+                .catch(err => {
+                  // On failure, log user out again
+                  fire.auth().signOut()
+                    .catch(err => {
+                      console.log(err.code);
+                      console.log(err.message);
+                    })
+                  
+                  // Then ask them to log in again later
+                  alert("There was an error and you have been logged out. Please try logging in again in a little bit.")
+                  
+                  // Then clear state
+                  store.dispatch(dashboardCancel());
+                  store.dispatch(authRevoke());
+                  console.log(err.code);
+                  console.log(err.message);
+                })
+            }
+            // Otherwise, update state with dashboard data
             store.dispatch(dashboardReceive(res.data));
           } else if (res.status === 204) {
+            // If the account is brand new, create init doc
+            axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
+              uid: uid
+            })
+              .catch(err => {
+                // On failure, log user out again
+                fire.auth().signOut()
+                  .catch(err => {
+                    console.log(err.code);
+                    console.log(err.message);
+                  })
+                
+                // Then ask them to log in again later
+                alert("There was an error and you have been logged out. Please try logging in again in a little bit.")
+                
+                // Then clear state
+                store.dispatch(dashboardCancel());
+                store.dispatch(authRevoke());
+                console.log(err.code);
+                console.log(err.message);
+              })
             // Head straight to dashboard if no data is present
             store.dispatch(dashboardCancel());
           }

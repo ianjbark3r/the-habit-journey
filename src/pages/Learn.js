@@ -6,13 +6,30 @@ export default class LearnMore extends Component {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-sm-8">
-            <h1 style={{ paddingTop: "15vh" }} className="display-3 mb-4">You are what you do today.</h1>
+            <h1 
+              style={{ paddingTop: "15vh" }} 
+              className="display-3 mb-4"
+            >
+              You are what you do today.
+            </h1>
+            <hr />
           </div>          
         </div>
-        <div style={{ fontSize:"1.2em", lineHeight:"28pt" }} className="row justify-content-center mt-3">
+        <div 
+          style={{ 
+            fontSize:"1.2em", 
+            lineHeight:"28pt" 
+          }} 
+          className="row justify-content-center mt-3"
+        >
           <div className="col-sm-4">
             <p>
-              <span style={{ fontSize:"1.2em" }} className="lead">Every day, you decide who you are–not in big, grandiose gestures, but in small, automatic actions.</span>
+              <span 
+                style={{ fontSize:"1.2em" }} 
+                className="lead"
+              >
+                Every day, you decide who you are–not in big, grandiose gestures, but in small, automatic actions.
+              </span>
             </p>
             <p>  
               Brushing your teeth, greeting the neighbor–the things you do every day are like votes you cast to determine who you want to be. A morning jog? Count that as a vote for a “fitter” you. A daily bag of Doritos? Unfortunately, probably the opposite (just don’t tell my tastebuds that).

@@ -46,15 +46,10 @@ export default class Home extends Component {
             </Link>
           </div>
         </div>
-        <div className="row justify-content-center">
-          <div
-            style={{ 
-                bottom:"0",
-                position:"fixed"
-              }} 
-              className="col text-center">
+        <div style={{ marginTop:"14vh", marginBottom:"3vh" }} className="row justify-content-center">
+          <div className="col text-center">
             <a style={{ color:"black" }} href="https://unsplash.com/photos/VieM9BdZKFo">
-              Photo by Leone Venter on Unsplash
+              (Photo by Leone Venter on Unsplash)
             </a>
           </div>
         </div>

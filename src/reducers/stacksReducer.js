@@ -47,7 +47,13 @@ const stacksReducer = (state = {
       return {
         ...state,
         storedStacks: [
-          ...state.storedStacks.concat(action.payload)
+          ...state.storedStacks.concat(action.payload.filter(item => {
+            if (item.type === "stack") {
+              return true;
+            } else {
+              return false;
+            }
+          }))
         ]
       }
     }

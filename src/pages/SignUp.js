@@ -57,10 +57,8 @@ export default class Login extends Component {
               }}
               onSubmit={(values,actions) => {
                 fire.auth().createUserWithEmailAndPassword(values.email, values.password)
-                  .then(cred => {
-                    actions.setSubmitting(false);
-                  })
                   .catch(err => {
+                    // Clearing state on failure
                     actions.setSubmitting(false);
                     store.dispatch(authRevoke());
                     console.log(err.code);
