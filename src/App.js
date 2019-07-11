@@ -52,10 +52,6 @@ class App extends Component {
         })
         .then(res => {
           if (res.status === 200) {
-            console.log(res);
-            console.log(res.data);
-            console.log(res.user);
-
             // Check for init doc. If not present, try to create.
             if (res.data.filter(e => e.init === true).length === 0) {
               axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {

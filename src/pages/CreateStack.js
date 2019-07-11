@@ -171,9 +171,9 @@ class CreateStack extends Component {
                         <>
                           {values.data && values.data.length > 0 ? (
                             values.data.map((data, index) => (
-                              <div className="row justify-content-center" key={index}>
-                                <div className="col-8" key={index}>
-                                  <p className="mb-1 mt-3" key={index}>After that, I will</p>
+                              <div className="row justify-content-center" key={`Row${index}`}>
+                                <div className="col-8" key={`LeftCol${index}`}>
+                                  <p className="mb-1 mt-3" key={`Text${index}`}>After that, I will</p>
                                   <Field
                                     style={{
                                       borderColor:"black",
@@ -187,15 +187,16 @@ class CreateStack extends Component {
                                     }}
                                     className="form-control" 
                                     name={`data.${index}`} 
+                                    key={`InputField${index}`}
                                   />
                                 </div>
-                                <div className="col-4 text-right mt-3" key={index}>   
-                                  <div className="form-group" key={index}>                               
+                                <div className="col-4 text-right mt-3" key={`RightCol${index}`}>   
+                                  <div className="form-group" key={`FormGroup${index}`}>                               
                                     <button
                                       className="btn btn-outline-dark my-2 ml-1 shadow-sm"
                                       type="button"
                                       onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
-                                      key={index}
+                                      key={`Remove${index}`}
                                     >
                                       -
                                     </button>
@@ -203,7 +204,7 @@ class CreateStack extends Component {
                                       className="btn btn-outline-dark my-2 shadow-sm"
                                       type="button"
                                       onClick={() => arrayHelpers.insert(index + 1, '')} // insert an empty string at a position
-                                      key={index}
+                                      key={`Add${index}`}
                                     >
                                       +
                                     </button>

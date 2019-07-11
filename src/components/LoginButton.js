@@ -28,11 +28,10 @@ const loginButton = (auth) => {
             alt="user menu"
           />
         </a>
-        <div className="dropdown-menu dropdown-menu-right ml-auto">
-          <Link to="changePassword">
-            <a className="dropdown-item" href="#">Change Password</a>
+        <div className="dropdown-menu dropdown-menu-right ml-auto text-right">
+          <Link to="changePassword" className="dropdown-item">
+            Change Password
           </Link>
-          <div class="dropdown-divider"></div>
           <a className="dropdown-item" href="#" onClick={(e) => signOut(e)}>Logout</a>
         </div>
       </>

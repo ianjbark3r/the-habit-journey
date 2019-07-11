@@ -8,11 +8,9 @@ export default class Navigation extends Component {
   render() {
     return (
       <nav className="navbar navbar-light justify-content-between fixed-top bg-light shadow-sm">
-        <a className="navbar-brand" href="#">
-					<Link to='/'>
-          	<p style={{ color:"black" }} className="my-2 mx-2"><strong>thj</strong></p>
-					</Link>
-        </a>
+				<Link className="navbar-brand" to='/'>
+        	<p style={{ color:"black" }} className="my-2 mx-2"><strong>thj</strong></p>
+				</Link>
         {loginButton(this.props.auth)}
       </nav>
     );
