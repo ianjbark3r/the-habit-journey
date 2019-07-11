@@ -49,8 +49,6 @@ class CreateStack extends Component {
                   })
                   .then(res => {
                     if (res.status === 201) {
-                      console.log(res)
-
                       // Update state with returned data
                       store.dispatch(createStackConfirm({
                         id: res.data.id,
@@ -113,7 +111,7 @@ class CreateStack extends Component {
                       <ErrorMessage name="name" component="div" />
                     </div>
                     <div className="form-group">
-                      <h4>
+                      <strong style={{ fontSize:"1.05em" }}>
                         <p className="d-inline mr-2">I will</p>
                         <Field
                           style={{
@@ -165,7 +163,7 @@ class CreateStack extends Component {
                         name="location"
                         placeholder="location"/>
                         <p className="d-inline">.</p>
-                      </h4>
+                      </strong>
                     </div>
                     <FieldArray
                       name="data"

@@ -53,7 +53,7 @@ const stacksReducer = (state = {
             } else {
               return false;
             }
-          }))
+          })).sort((a, b) => (a.name > b.name) ? 1 : -1)
         ]
       }
     }

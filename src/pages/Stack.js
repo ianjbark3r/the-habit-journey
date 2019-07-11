@@ -81,7 +81,7 @@ class Stack extends Component {
           </div>
           <div className="row justify-content-center mt-3">
             <div className="col-sm-5">
-              <ul>
+              <ul style={{ paddingLeft:"1.1em" }}>
                 {this.props.data.map((item, index) => {
                   let lastIndex = index - 1;
                   return additionalHabit(item, this.props.data[lastIndex], index, this.props.first_habit)

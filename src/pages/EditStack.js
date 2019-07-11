@@ -103,7 +103,7 @@ class EditStack extends Component {
                     <ErrorMessage name="name" component="div" />
                   </div>
                   <div className="form-group">
-                    <h4>
+                    <strong style={{ fontSize:"1.05em" }}>
                       <p className="d-inline mr-2">I will</p> 
                       <Field
                         style={{
@@ -159,7 +159,7 @@ class EditStack extends Component {
                       <ErrorMessage name="first_habit" component="div" />
                       <ErrorMessage name="time" component="div" />
                       <ErrorMessage name="location" component="div" />
-                    </h4>
+                    </strong>
                   </div>
                   <FieldArray
                     name="data"
