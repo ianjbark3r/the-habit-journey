@@ -11,3 +11,12 @@ None
 - Mobile app in React Native
 - Daily habit check-off and success tracking
 - Rewards structure for check-off streaks, etc. ("gamification")
+
+## Built With:
+- AJAX
+- Bootstrap 4
+- Express.js/Node.js
+- Firebase Auth
+- MongoDB/Firestore
+- React
+- Redux
