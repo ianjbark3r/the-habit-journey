@@ -1,6 +1,6 @@
+import { Formik, Field, Form } from 'formik';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Formik, Field, Form } from 'formik';
 import * as Yup from "yup";
 
 import fire from '../config/Fire';

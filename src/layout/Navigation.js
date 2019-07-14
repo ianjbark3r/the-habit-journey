@@ -9,7 +9,7 @@ export default class Navigation extends Component {
     return (
       <nav className="navbar navbar-light justify-content-between fixed-top bg-light shadow-sm">
 				<Link className="navbar-brand" to='/'>
-        	<p style={{ color:"black" }} className="my-2 mx-2"><strong>thj</strong></p>
+        	<strong style={{ fontFamily:"'Domine', serif" }}>thj</strong>
 				</Link>
         {loginButton(this.props.auth)}
       </nav>

@@ -1,7 +1,7 @@
+import { Formik, Field, Form } from 'formik';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Formik, Field, Form } from 'formik';
 
 // Import Firebase auth and state store
 import fire from '../config/Fire';

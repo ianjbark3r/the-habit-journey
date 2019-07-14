@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import axios from 'axios';
 import { Formik, Field, FieldArray, Form, ErrorMessage } from 'formik';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 // Import state store
 import store from '../Store';

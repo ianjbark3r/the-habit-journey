@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import axios from 'axios';
 
 import store from '../Store';
 
@@ -130,8 +130,8 @@ const mapStateToProps = state => {
     isLoading: state.ui.isLoading,
     location: state.stacks.currentStack.location,
     name: state.stacks.currentStack.name,
-    stackId: state.stacks.currentStack.id,
     redirecting: state.ui.redirecting,
+    stackId: state.stacks.currentStack.id,
     time: state.stacks.currentStack.time,
     uid: state.ui.user.uid
   }

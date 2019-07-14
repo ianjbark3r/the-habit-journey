@@ -10,7 +10,7 @@ import store from './Store';
 
 // Import components
 import Navigation from './layout/Navigation';
-import ChangePassword from './pages/ChangePassword'
+import AccountSettings from './pages/AccountSettings';
 import CreateStack from './pages/CreateStack';
 import Dashboard from './pages/Dashboard';
 import EditStack from './pages/EditStack';
@@ -52,11 +52,21 @@ class App extends Component {
         })
         .then(res => {
           if (res.status === 200) {
-            // Check for init doc. If not present, try to create.
+            // Check for init doc. If not present, reinitiate account
             if (res.data.filter(e => e.init === true).length === 0) {
               axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
                 uid: uid
               })
+                .then(() => {
+                  // Then retrieve dashboard
+                  axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/getDashboard/${uid}`, {
+                    userId: uid
+                  })
+                    .then(res => {
+                      // Then save dashboard to state
+                      store.dispatch(dashboardReceive(res.data));
+                    })
+                })
                 .catch(err => {
                   // On failure, log user out again
                   fire.auth().signOut()
@@ -78,10 +88,20 @@ class App extends Component {
             // Otherwise, update state with dashboard data
             store.dispatch(dashboardReceive(res.data));
           } else if (res.status === 204) {
-            // If the account is brand new, create init doc
+            // If the account is brand new, create init docs
             axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
               uid: uid
             })
+              .then(() => {
+                // Then retrieve dashboard
+                axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/getDashboard/${uid}`, {
+                  userId: uid
+                })
+                  .then(res => {
+                    // Then save dashboard to state
+                    store.dispatch(dashboardReceive(res.data));
+                  })
+              })
               .catch(err => {
                 // On failure, log user out again
                 fire.auth().signOut()
@@ -99,8 +119,6 @@ class App extends Component {
                 console.log(err.code);
                 console.log(err.message);
               })
-            // Head straight to dashboard if no data is present
-            store.dispatch(dashboardCancel());
           }
         })
         .catch(err => {
@@ -168,12 +186,12 @@ class App extends Component {
                 )} 
               />
               <Route exact 
-                path="/changePassword" 
+                path="/accountSettings" 
                 render={() => (
                   !this.props.auth ? (
                     <Redirect to="/" />
                   ) : (
-                    <ChangePassword />
+                    <AccountSettings />
                   )
                 )} 
               />

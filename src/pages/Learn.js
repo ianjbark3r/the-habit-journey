@@ -49,7 +49,7 @@ export default class LearnMore extends Component {
               This app is built from the ground up using the system outlined in James Clear’s incredible book <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299">“Atomic Habits”</a>. By using this app, you will be guided through the process of grounding habits in your desired identities, and then structuring those habits in a way that frees your mind from worry, eventually becoming automatic.
             </p>
             <p>
-              The end result? Well, that’s the thing: there is no end. Being who you want to be is an everyday endeavor. But through this structure, we can automate our daily votes for our desired identities until “who I want to be” and “who I am” are the same person. <i>That’s the journey</i>. That’s the power of habits, just waiting for you to take the first step and unlock your own potential.
+              The end result? Well, that’s the thing: there is no end. Being who you want to be is an everyday endeavor and through this structure, we can automate our daily votes for our desired identities until “who I want to be” and “who I am” are the same person. <i>That’s the journey</i>. That’s the power of habits, just waiting for you to take the first step and unlock your own potential.
             </p>
           </div>
         </div>

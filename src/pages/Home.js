@@ -17,7 +17,15 @@ export default class Home extends Component {
       >
         <div className="row justify-content-center">
           <div className="col">
-            <h1 style={{ textAlign:"center", paddingTop:"30vh" }} className='display-3 mx-auto'>The Habit Journey</h1>
+            <h1 
+              style={{ 
+                textAlign:"center", 
+                paddingTop:"30vh" 
+              }} 
+              className='display-3 mx-auto'
+            >
+              The Habit Journey
+            </h1>
           </div>
         </div>
         <div style={{ marginTop:"10vh" }} className="row justify-content-center">

@@ -1,11 +1,15 @@
+import axios from 'axios';
+import { Formik, Field, FieldArray, Form, ErrorMessage } from 'formik';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import axios from 'axios';
-import { Formik, Field, FieldArray, Form, ErrorMessage } from 'formik';
 
 // Import state store
 import store from '../Store';
+
+// Import components
+import HabitList from '../layout/tutorial/HabitList';
+import IntDec from '../layout/tutorial/IntDec';
 
 // Import Redux actions
 import createStack from '../actions/createStack';
@@ -110,6 +114,8 @@ class CreateStack extends Component {
                       </h2>                      
                       <ErrorMessage name="name" component="div" />
                     </div>
+                    {/* Intention declaration tooltip */}
+                    {this.props.tutActive.includes("intDec") && <IntDec />}
                     <div className="form-group">
                       <strong style={{ fontSize:"1.05em" }}>
                         <p className="d-inline mr-2">I will</p>
@@ -165,6 +171,8 @@ class CreateStack extends Component {
                         <p className="d-inline">.</p>
                       </strong>
                     </div>
+                    {/* Habit list tooltip */}
+                    {this.props.tutActive.includes("habitList") && <HabitList />}
                     <FieldArray
                       name="data"
                       render={arrayHelpers => (
@@ -260,7 +268,8 @@ class CreateStack extends Component {
 const mapStateToProps = state => {
   return {
     uid: state.ui.user.uid,
-    redirecting: state.ui.redirecting
+    redirecting: state.ui.redirecting,
+    tutActive: state.tutorial.active
   }
 }
 

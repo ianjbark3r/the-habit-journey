@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import fire from '../config/Fire';
 
 import userIcon from '../user-icon.png'
@@ -28,9 +29,9 @@ const loginButton = (auth) => {
             alt="user menu"
           />
         </a>
-        <div className="dropdown-menu dropdown-menu-right ml-auto text-right">
-          <Link to="changePassword" className="dropdown-item">
-            Change Password
+        <div className="dropdown-menu dropdown-menu-right ml-auto text-left">
+          <Link to="accountSettings" className="dropdown-item">
+            Account
           </Link>
           <a className="dropdown-item" href="#" onClick={(e) => signOut(e)}>Logout</a>
         </div>
