@@ -227,7 +227,7 @@ class CreateStack extends Component {
                                 paddingRight:"20px", 
                                 paddingLeft:"20px" 
                               }}
-                              className="btn btn-outline-dark mt-2"
+                              className="btn btn-outline-dark mt-4"
                               type="button"
                               onClick={() => arrayHelpers.push('')}
                             >
