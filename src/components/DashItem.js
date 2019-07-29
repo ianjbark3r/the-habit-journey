@@ -22,7 +22,7 @@ const handleClick = (e, id) => {
 
 const dashItem = (props, index) => {
   return (
-    <div className="mb-2" key={index}>
+    <div className="mb-2" key={index} data-test="dashItemDiv">
       <Link key={index} to='/stack'>
         <p 
           style={{
@@ -37,6 +37,7 @@ const dashItem = (props, index) => {
           className="py-2 shadow-sm" 
           key={index} 
           onClick={e => handleClick(e, props.id)}
+          data-test="dashItemButton"
         >
           {props.name}
         </p>

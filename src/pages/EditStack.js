@@ -46,7 +46,7 @@ class EditStack extends Component {
                 const stackId = this.props.stackId
   
                 // API call
-                axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/${stackId}`, {
+                axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/${stackId}`, {
                   uid: uid,
                   data: values
                 })

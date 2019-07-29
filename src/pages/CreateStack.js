@@ -47,7 +47,7 @@ class CreateStack extends Component {
                   const uid = this.props.uid;
 
                   // API call
-                  axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/`, {
+                  axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/`, {
                     uid: uid,
                     data: values
                   })

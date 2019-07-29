@@ -15,7 +15,7 @@ class HabitList extends Component {
     store.dispatch(tutorialDismiss("habitList"));
 
     // API call to update user preferences
-    axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accDataUpdate`, {
+    axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/account`, {
       uid: this.props.uid,
       tutorial: {
         active: this.props.tutorial.active.filter(item => {

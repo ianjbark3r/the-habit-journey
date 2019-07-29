@@ -47,19 +47,19 @@ class App extends Component {
         store.dispatch(dashboardRequest());
 
         // API call
-        axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/getDashboard/${uid}`, {
+        axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/dashboard/${uid}`, {
           userId: uid
         })
         .then(res => {
           if (res.status === 200) {
             // Check for init doc. If not present, reinitiate account
             if (res.data.filter(e => e.init === true).length === 0) {
-              axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
+              axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/account`, {
                 uid: uid
               })
                 .then(() => {
                   // Then retrieve dashboard
-                  axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/getDashboard/${uid}`, {
+                  axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/dashboard/${uid}`, {
                     userId: uid
                   })
                     .then(res => {
@@ -89,12 +89,12 @@ class App extends Component {
             store.dispatch(dashboardReceive(res.data));
           } else if (res.status === 204) {
             // If the account is brand new, create init docs
-            axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accInit`, {
+            axios.post(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/account`, {
               uid: uid
             })
               .then(() => {
                 // Then retrieve dashboard
-                axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/getDashboard/${uid}`, {
+                axios.get(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/dashboard/${uid}`, {
                   userId: uid
                 })
                   .then(res => {

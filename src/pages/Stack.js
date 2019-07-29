@@ -22,7 +22,7 @@ class Stack extends Component {
       const stackId = this.props.stackId
       
       // API call
-      axios.delete(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/stacks/${uid}/${stackId}`, {
+      axios.delete(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/stacks/${uid}/${stackId}`, {
         data: null
       })
       .then(res => {

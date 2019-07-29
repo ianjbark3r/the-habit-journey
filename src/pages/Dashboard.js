@@ -14,7 +14,12 @@ class Dashboard extends Component {
       return (
         <div className="container-fluid">
           <div className="text-center">
-            <div className="spinner-border" role="status" style={{ marginTop: "20vh" }}>
+            <div 
+              className="spinner-border" 
+              role="status" 
+              style={{ marginTop: "20vh" }}
+              data-test="spinner"
+            >
               <span className="sr-only">Loading...</span>
             </div>
           </div>
@@ -22,8 +27,8 @@ class Dashboard extends Component {
       )
     } else {
       return (
-        <div className="container-fluid">
-          <div style={{ marginTop:"10vh" }} className="row justify-content-center">
+        <div className="container-fluid" data-test="dashboard">
+          <div style={{ marginTop:"5vh" }} className="row justify-content-center">
             <div className="col-sm-5">
             </div>
           </div>

@@ -29,7 +29,7 @@ class AccountSettings extends Component {
     store.dispatch(tutorialReset());
 
     // API call to update user preferences
-    axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/accDataUpdate`, {
+    axios.put(`https://us-central1-the-habit-journey.cloudfunctions.net/app/api/v1/account`, {
       uid: this.props.uid,
       tutorial: {
         active: this.props.tutorial.active.concat(this.props.tutorial.dismissed),
