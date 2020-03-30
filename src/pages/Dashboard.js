@@ -37,12 +37,12 @@ class Dashboard extends Component {
               {this.props.tutActive.includes("chooseIds") && <ChooseIds />}
             </div>
           </div>
-          <div style={{ marginBottom:"5vh" }} className="row justify-content-center">
+          <div className="row justify-content-center">
             <div className="col-lg-4 col-md-6 col-sm-8">
               {this.props.tutActive.includes("recHabits") && <RecHabits />}
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div style={{ paddingTop:"2vh" }} className="row justify-content-center">
             <div className="col-lg-2 col-md-4 col-sm-5 col-7">
               <h2 className="mb-0">My Stacks</h2>
             </div>
