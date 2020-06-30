@@ -1,5 +1,21 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
 # dependencies
 /node_modules
 /.pnp
