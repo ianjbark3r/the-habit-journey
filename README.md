@@ -1,4 +1,6 @@
 # The Habit Journey
+https://the-habit-journey.firebaseapp.com/
+
 An app for building healthy habits based on the book "Atomic Habits" by James Clear.
 
 Users can create accounts and then build and save healthy routines using guided tooltips.
