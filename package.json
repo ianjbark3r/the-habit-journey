@@ -16,7 +16,7 @@
     "formik": "^1.5.7",
     "jquery": "^3.4.1",
     "mongodb": "^3.5.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "popper": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
